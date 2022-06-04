@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/background_password_enter_unchecked.xml" value="0.312" />
         <entry key="app/src/main/res/drawable/background_password.xml" value="0.312" />
         <entry key="app/src/main/res/drawable/background_password_button.xml" value="0.312" />
-        <entry key="app/src/main/res/layout/fragment_password.xml" value="0.35625" />
+        <entry key="app/src/main/res/drawable/background_password_enter_checked.xml" value="0.312" />
+        <entry key="app/src/main/res/drawable/background_password_enter_unchecked.xml" value="0.2945" />
+        <entry key="app/src/main/res/drawable/selector_password_enter.xml" value="0.312" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/fragment_password.xml" value="0.5" />
       </map>
     </option>
   </component>
