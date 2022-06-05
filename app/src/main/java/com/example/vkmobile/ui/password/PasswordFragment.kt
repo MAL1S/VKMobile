@@ -81,6 +81,18 @@ class PasswordFragment : Fragment() {
                 binding.tvSuccess.visibility = View.INVISIBLE
             }
         }
+
+        binding.btnRefresh.setOnClickListener {
+            isSettling = true
+            savePasswordToSharedPref("")
+            setLoginToSharedPref(ifLogin = false)
+            enteredPassword = ""
+            writtenNumbers = 0
+            updateRadioButtons(writtenNumbers)
+            binding.textView.text = getString(R.string.set_password)
+            binding.tvError.visibility = View.INVISIBLE
+            binding.tvSuccess.visibility = View.INVISIBLE
+        }
     }
 
     private fun passwordButtonListener(view: View) {
@@ -93,7 +105,7 @@ class PasswordFragment : Fragment() {
                 if (isSettling) {
                     isSettling = false
                     savePasswordToSharedPref(enteredPassword)
-                    setLoginToSharedPref()
+                    setLoginToSharedPref(ifLogin = true)
                     enteredPassword = ""
                     writtenNumbers = 0
                     updateRadioButtons(writtenNumbers)
@@ -117,9 +129,9 @@ class PasswordFragment : Fragment() {
         }
     }
 
-    fun setLoginToSharedPref() {
+    fun setLoginToSharedPref(ifLogin: Boolean) {
         requireContext().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE).edit()
-            .putBoolean(LOGIN, true)
+            .putBoolean(LOGIN, ifLogin)
             .apply()
     }
 
